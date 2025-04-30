@@ -1,15 +1,49 @@
 import {Col, Container, Row} from "react-bootstrap";
 import BookCard from "../bookCard/BookCard.jsx";
 import {useAllBooks} from "../../hooks/useBooks.js";
+import {useEffect, useState} from "react";
 
 const BooksList = () => {
 
-    const { books, error, isLoading } = useAllBooks();
+    const { books, setBooks, getAllBooks, error, isLoading } = useAllBooks()
+    const [ query, setQuery ] = useState('')
+
+    const booksQuery = (e) => {
+        setQuery(e.target.value)
+    }
+
+    const searchHandler = () => {
+        setTimeout( () => {
+            if (query === '') {
+                getAllBooks()
+            } else {
+                const matchingBooks = books.filter(book => book.title.toLowerCase().includes(query.toLowerCase()))
+                setBooks(matchingBooks)
+            }
+        }, 600)
+    }
+
+    useEffect(() => {
+        searchHandler();
+
+        return () => {
+            clearTimeout(searchHandler)
+        }
+    }, [query]);
 
     return (
         <>
             <section>
                 <Container>
+                    <div className="d-flex w-50 mx-auto justify-content-center mb-5">
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={query}
+                            placeholder="Search your book..."
+                            onChange={booksQuery}
+                        />
+                    </div>
                     <Row
                         className="gy-3"
                     >

@@ -24,5 +24,5 @@ export const useAllBooks = () => {
         getAllBooks();
     }, []);
 
-    return { books, error, isLoading }
+    return { books, setBooks, getAllBooks, error, isLoading }
 }

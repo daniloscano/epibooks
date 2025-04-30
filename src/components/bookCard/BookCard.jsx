@@ -1,10 +1,20 @@
 import {Button, Card} from "react-bootstrap";
 import './bookCard.css'
+import {useState} from "react";
 
 const BookCard = ({ book }) => {
+    const [ selected, setSelected ] = useState(false)
+
+    const selectBook = () => {
+        setSelected(!selected)
+    }
+
     return (
         <>
-            <Card>
+            <Card
+                onClick={selectBook}
+                className={ selected && 'border border-2 border-warning' }
+            >
                 <Card.Img className="card-img" variant="top" src={book.img} />
                 <Card.Body>
                     <Card.Title

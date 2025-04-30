@@ -2,22 +2,23 @@ import Navigation from "./components/navigation/Navigation.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import MainHeader from "./components/mainHeader/MainHeader.jsx";
 import BooksList from "./components/booksList/BooksList.jsx";
+import SearchBar from "./components/searchBar/SearchBar.jsx";
 
 const App = () => {
 
-  return (
-    <>
-        <Navigation />
+    return (
+        <>
+            <Navigation />
 
-        <MainHeader />
+            <MainHeader />
 
-        <main>
-            <BooksList />
-        </main>
+            <main>
+                <BooksList />
+            </main>
 
-        <Footer />
-    </>
-  )
+            <Footer />
+        </>
+    )
 }
 
 export default App
