@@ -1,20 +1,18 @@
 import {Button, Card} from "react-bootstrap";
 import './bookCard.css'
-import {useState} from "react";
+import {useContext} from "react";
+import {CommentsContext} from "../../contexts/CommentsContext.jsx";
 
 const BookCard = ({ book }) => {
-    const [ selected, setSelected ] = useState(false)
+    const { setSelectedBook } = useContext(CommentsContext)
 
     const selectBook = () => {
-        setSelected(!selected)
+        setSelectedBook(book.asin)
     }
 
     return (
         <>
-            <Card
-                onClick={selectBook}
-                className={ selected && 'border border-2 border-warning' }
-            >
+            <Card onClick={selectBook} >
                 <Card.Img className="card-img" variant="top" src={book.img} />
                 <Card.Body>
                     <Card.Title

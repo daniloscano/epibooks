@@ -1,15 +1,15 @@
-import {createContext, useState} from "react";
+import {createContext} from "react";
+import {useComments} from "../hooks/useComments.js";
 
 export const CommentsContext = createContext();
 
 export const CommentsProvider = ({children}) => {
-    const [ selectedBook, setSelectedBook ] = useState(null)
-    const [ commentsList, setCommentsList ] = useState([])
+    const { comments, setComments, getBookComments, selectedBook, setSelectedBook, error, isLoading } = useComments()
 
 
 
     return (
-        <CommentsContext.Provider value={ {selectedBook, commentsList}}>
+        <CommentsContext.Provider value={ {comments, setComments, getBookComments, selectedBook, setSelectedBook, error, isLoading}}>
             {children}
         </CommentsContext.Provider>
     )

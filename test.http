@@ -1,1 +1,3 @@
-GET https://
+GET https://striveschool-api.herokuapp.com/api/books/0316438960/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjZTliODgyNGU4ZDRiZGQwOWM2YzcwYWRjM2I3N2M5MyIsIm5iZiI6MTc0Mjk0Mjg0Mi43MjIsInN1YiI6IjY3ZTMzMjdhNGM1Mjc0NjY2NWRjYjhkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qTkgjg-aFkrd4r4k39YkHgUfLuPaH3SICs-Z5SpH8G0
