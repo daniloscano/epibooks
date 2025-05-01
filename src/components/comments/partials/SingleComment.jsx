@@ -3,7 +3,7 @@ const SingleComment = ({ comment }) => {
         <>
             <div className="d-flex justify-content-between align-items-center">
                 <div>
-                    <p className="m-0">{comment.comment}</p>
+                    <p className="fw-bold m-0">{comment.comment}</p>
                     <small className="m-0">rating: {comment.rate}</small>
                 </div>
                 <div className="d-flex align-items-center gap-2">

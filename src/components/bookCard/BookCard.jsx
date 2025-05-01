@@ -12,7 +12,9 @@ const BookCard = ({ book }) => {
 
     return (
         <>
-            <Card onClick={selectBook} >
+            <Card
+                onClick={selectBook}
+            >
                 <Card.Img className="card-img" variant="top" src={book.img} />
                 <Card.Body>
                     <Card.Title
