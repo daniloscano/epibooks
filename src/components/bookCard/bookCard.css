@@ -1,4 +1,5 @@
 .card-img {
-    max-height: 260px;
+    min-height: 240px;
+    max-height: 240px;
     object-fit: contain;
 }
